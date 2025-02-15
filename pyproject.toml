@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "syncwf"
+version = "0.1.0"
+description = "data Workflows"
+authors = ["meriechh <mariemchouati@gmail.com>"]
+license = "proprietary"
+[tool.poetry.dependencies]
+python = "^3.10"
+python-dotenv = "1.0.1"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.25.1"
+jsonschema = "^4.19.1"
+urllib3="^1.26.5"
+sentry-sdk = "^2.5.1"
+argparse = "^1.4.0" 
+opensearch-py = "^2.8.0"
+tqdm = "^4.67.1"
+rich = "^13.9.4"
+typer = "^0.15.1"
+langdetect = "^1.0.9"
+arabic-reshaper = "^3.0.0"
+python-bidi = "^0.6.3"
+pymupdf = "^1.25.3"
+pytesseract = "^0.3.13"
+fpdf = "^1.7.2"
+pdf2image = "^1.17.0"
+
+[tool.poetry.scripts] 
+jort = "syncwf.jort:run"
+jurisprudence = "syncwf.jurisprudence:run"
+cassastion = "syncwf.cassastion:run"
+wmremover = "syncwf.watermarkremover:run"
+
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+ 
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
