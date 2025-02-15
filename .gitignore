@@ -234,6 +234,8 @@ fabric.properties
 backups/
 input.json
 output/
+output_json/
+input/
 log.txt
 
 # Devenv
