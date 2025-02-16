@@ -1297,6 +1297,20 @@ test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=8.3.2)", "pytest-
 type = ["mypy (>=1.11.2)"]
 
 [[package]]
+name = "pyarabic"
+version = "0.6.15"
+description = "Arabic text tools for Python"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "PyArabic-0.6.15-py3-none-any.whl", hash = "sha256:b9a530277876008f5fbe53249c6953b4513dbbf2ea8f4339694e87c8a75d7edf"},
+]
+
+[package.dependencies]
+six = ">=1.14.0"
+
+[[package]]
 name = "pygments"
 version = "2.19.1"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -1375,6 +1389,18 @@ python-versions = "*"
 groups = ["main"]
 files = [
     {file = "PyPDF4-1.27.0.tar.gz", hash = "sha256:7c932441146d205572f96254d53c79ea2c30c9e11df55a5cf87e056c7b3d7f89"},
+]
+
+[[package]]
+name = "pyspellchecker"
+version = "0.8.2"
+description = "Pure python spell checker based on work by Peter Norvig"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "pyspellchecker-0.8.2-py3-none-any.whl", hash = "sha256:4fee22e1859c5153c3bc3953ac3041bf07d4541520b7e01901e955062022290a"},
+    {file = "pyspellchecker-0.8.2.tar.gz", hash = "sha256:2b026be14a162ba810bdda8e5454c56e364f42d3b9e14aeff31706e5ebcdc78f"},
 ]
 
 [[package]]
@@ -2156,4 +2182,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "66504c94463fa217c75508f3f7f96239528f976a5c62f7c542a76246aa78976f"
+content-hash = "a30c0bffd66b54c3abe2cfd1ea48afee0b40015140cffcc12cbc262efc39664f"
