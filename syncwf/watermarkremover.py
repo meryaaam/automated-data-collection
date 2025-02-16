@@ -10,7 +10,7 @@ def pdf_to_images(pdf_path):
     """
     Convert PDF pages to images with a higher DPI for better OCR accuracy.
     """
-    images = convert_from_path(pdf_path, dpi=1300)  # Increase DPI to 300 or higher
+    images = convert_from_path(pdf_path, dpi=500)  # Increase DPI to 300 or higher
     return images
 
 def ocr_images_to_text(images):
@@ -28,7 +28,7 @@ def create_pdf_from_text(text, output_pdf):
     """
     pdf = FPDF()
     pdf.add_page()
-    pdf.add_font('Amiri', '', 'font/armiri/Amiri-Regular.ttf', uni=True)  # Use a font that supports Arabic
+    pdf.add_font('Amiri', '', 'font/amiri/Amiri-Regular.ttf', uni=True)  # Use a font that supports Arabic
     pdf.set_font('Amiri', size=12)
     pdf.set_right_margin(10)
     reshaped_text = reshape(text)  # Reshape Arabic text
