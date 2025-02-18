@@ -7,6 +7,9 @@ from bidi.algorithm import get_display  # For RTL text handling
 from arabic_reshaper import reshape  # For reshaping Arabic text
 import cv2
 import numpy as np
+
+
+
 def pdf_to_images(pdf_path):
     images = convert_from_path(pdf_path, dpi=300)  # Convert to images with high DPI
     return images
@@ -51,35 +54,10 @@ def preprocess_image(image):
 def ocr_extract(image):
    
     custom_config = r'--oem 3 --psm 6'  
-    text = pytesseract.image_to_string(image, lang='ara' , config=custom_config)  # Use 'ara' for Arabic text
-    return text
-    #width, height = image.size
-    #w_scale = 2000 / width
-    #h_scale = 2000 / height
-    #
-    #ocr_df = pytesseract.image_to_data(image, output_type='data.frame', lang='ara+fra')  # Arabic and French
-    #
-    ## Drop rows with missing values
-    #ocr_df = ocr_df.dropna()
-    #
-    # # Scale coordinates (optional, depending on your use case)
-    #w_scale = 2000 / width
-    #h_scale = 2000 / height
-    #ocr_df = ocr_df.assign(
-    #    left_scaled=ocr_df.left * w_scale,
-    #    width_scaled=ocr_df.width * w_scale,
-    #    top_scaled=ocr_df.top * h_scale,
-    #    height_scaled=ocr_df.height * h_scale,
-    #    right_scaled=lambda x: x.left_scaled + x.width_scaled,
-    #    bottom_scaled=lambda x: x.top_scaled + x.height_scaled
-    #)
-    #float_cols = ocr_df.select_dtypes('float').columns
-    #ocr_df[float_cols] = ocr_df[float_cols].round(0).astype(int)
-    #
-    ##ocr_df = ocr_df.sort_values(by=['top_scaled', 'left_scaled'], ascending=[True, False])  # For RTL (Arabic)
-    #
-    #text = " ".join(ocr_df.text)
-    #return ocr_df.text
+    ocr_data = pytesseract.image_to_string(image, lang='ara' , config=custom_config ,output_type=pytesseract.Output.STRING)  # Use 'ara' for Arabic text
+   
+    return ocr_data
+     
 
 def ocr_images_to_text(images):
     text = ""
@@ -108,7 +86,7 @@ def remove_watermark(input_pdf, output_pdf):
     print(f"Watermark removed. Clean PDF saved to {output_pdf}")
 
 def run():
-    remove_watermark(input_pdf="input/24249.pdf", output_pdf="output/24249-1.pdf")
+    remove_watermark(input_pdf="input/24249.pdf", output_pdf="output/24249-3.pdf")
 
 if __name__ == "__main__":
     run()
