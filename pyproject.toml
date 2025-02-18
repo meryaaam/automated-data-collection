@@ -33,6 +33,9 @@ img2pdf = "^0.6.0"
 fpdf = "^1.7.2"
 pyarabic = "^0.6.15"
 pyspellchecker = "^0.8.2"
+fpdf2 = "^2.8.2"
+pdfplumber = "^0.11.5"
+pandas = "^2.2.3"
 
 
 [tool.poetry.scripts] 

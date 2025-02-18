@@ -108,8 +108,8 @@ def image_to_pdf(image_path, output_pdf_path):
         pdf_file.write(img2pdf.convert(image_path))
 
 def run():
-    input_pdf = "input/54908.pdf"  # Remove the comma to avoid creating a tuple
-    output_pdf = "output/clean_cassation/54908.pdf"  # Same here
+    input_pdf = "input/24249.pdf"  # Remove the comma to avoid creating a tuple
+    output_pdf = "output/clean_cassation/24249.pdf"  # Same here
 
     image_path = "output/img1.jpg"
     output_path = "output/image1-1.jpg"
